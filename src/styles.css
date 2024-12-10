@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "MontserratBold";
+  src: url("/assets/fonts/Montserrat-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "MontserratExtraBold";
+  src: url("/assets/fonts/montserrat-extrabold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Sabugo";
+  src: url("/assets/fonts/visby-round-cf-bold.otf") format('opentype');
+}
+
+@font-face {
+  font-family: "VisbyMedium";
+  src: url("/assets/fonts/VisbyRoundCFMedium.otf") format('opentype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "VisbyMedium", sans-serif;
+  background: radial-gradient(circle at top left, #257fec, #51A5BF);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1 {
+
+  font-family: "MontserratExtraBold", sans-serif;
+  font-size: 4.25rem;
+  margin: 0;
+  padding: 0;
+}
