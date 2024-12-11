@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, computed, input } from '@angular/core';
 
 
 @Component({
@@ -10,13 +10,13 @@ import { Component, Input } from '@angular/core';
 })
 export class UserComponent {
 
-  @Input() avatar!: string;
-  @Input() name!: string;
+  avatar = input.required<string>();
+  name = input.required();
 
-  get imagePath() {
+  imagePath = computed(() => {
 
-    return 'assets/users/' + this.avatar;
-  }
+    return 'assets/users/' + this.avatar();
+  })
 
   onSelectUser() {
 
