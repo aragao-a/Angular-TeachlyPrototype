@@ -17,7 +17,7 @@ export class AppComponent {
 
   users = DUMMY_USERS;
 
-  selectedUserId = 'u1';
+  selectedUserId?: string;
 
   get selectedUser() {
 
