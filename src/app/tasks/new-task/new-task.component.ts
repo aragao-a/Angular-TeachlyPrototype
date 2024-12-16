@@ -10,6 +10,4 @@ import { Component, Input } from '@angular/core';
 })
 export class NewTaskComponent {
 
-  @Input({ required: true }) showNewTask!: boolean;
-
 }

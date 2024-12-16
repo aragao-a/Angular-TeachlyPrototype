@@ -1,4 +1,9 @@
 
+@if (showNewTask) {
+
+    <app-new-task></app-new-task>
+}
+
 <section id="tasks">
 
     <header>
@@ -23,10 +28,6 @@
             </li>
         }
     </ul>
-
-    <app-new-task [showNewTask]="showNewTask">
-       
-    </app-new-task>
     
 
 </section>

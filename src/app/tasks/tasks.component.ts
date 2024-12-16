@@ -14,8 +14,6 @@ export class TasksComponent {
   @Input({ required: true }) userId!: string;
   @Input({ required: true }) name!: string;
 
-  @Output() newTask = new EventEmitter<boolean>();
-
   tasks = [
 
     {
@@ -57,7 +55,6 @@ export class TasksComponent {
   generateNewTask() {
 
     this.showNewTask = true;
-    this.newTask.emit(this.showNewTask);
   }
   
 }
