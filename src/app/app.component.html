@@ -1,43 +1,31 @@
 <app-header />
 
 <main>
-  <ul id="" users>
-    <li style="margin-bottom: 0.5rem">
-      <app-user
-        [id]="users[0].id"
-        [avatar]="users[0].avatar"
-        [name]="users[0].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
 
-    <li style="margin-bottom: 0.5rem">
-      <app-user
-        [id]="users[1].id"
-        [avatar]="users[1].avatar"
-        [name]="users[1].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
+  <ul id="users">
 
-    <li style="margin-bottom: 0.5rem">
-      <app-user
-        [id]="users[2].id"
-        [avatar]="users[2].avatar"
-        [name]="users[2].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
+    @for (person of users; track person.id) {
 
-    <li style="margin-bottom: 0.5rem">
-      <app-user
-        [id]="users[3].id"
-        [avatar]="users[3].avatar"
-        [name]="users[3].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
+      <li>
+        <app-user
+          [user]="person" [selected]="person.id === selectedUserId"
+          (select)="onSelectUser($event)"
+        />
+      </li>
+      
+    }
+
   </ul>
 
-  <app-tasks [selectedUserName]="selectedUserName"/>
+  @if (selectedUser) {
+
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"/>
+
+  } @else {
+
+    <h2 style="margin-top: 1.5rem" 
+    id="fallback">
+    Select a user to see their Tasks!</h2>
+  }
+
 </main>

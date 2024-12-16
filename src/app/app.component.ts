@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { HeaderComponent } from './header/header.component'
 import { UserComponent } from "./user/user.component";
@@ -17,10 +18,15 @@ export class AppComponent {
 
   users = DUMMY_USERS;
 
-  selectedUserName: string = '';
+  selectedUserId?: string;
 
-  onSelectUser(name: string) {
+  get selectedUser() {
 
-    this.selectedUserName = name;
+    return this.users.find((user) => user.id === this.selectedUserId)!;
+  }
+
+  onSelectUser(id: string) {
+
+    this.selectedUserId = id;
   }
 }
