@@ -1,4 +1,12 @@
 
+@if (showNewTask) {
+
+    <app-new-task  [userId]="userId"
+        (close)="onCloseAddTask()"
+        
+    ></app-new-task>
+}
+
 <section id="tasks">
 
     <header>
@@ -16,17 +24,12 @@
         @for (task of selectedUserTasks; track task.id) {
             <li>
     
-                <app-task [task]="task" 
-                (complete)="onCompleteTask($event)">
+                <app-task [task]="task">
                 </app-task>
                 
             </li>
         }
     </ul>
-
-    <app-new-task [showNewTask]="showNewTask">
-       
-    </app-new-task>
     
 
 </section>
